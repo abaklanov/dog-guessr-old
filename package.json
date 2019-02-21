@@ -15,10 +15,8 @@
     "jest-cli": "^24.1.0"
   },
   "dependencies": {
-    "eslint": "^5.14.1",
-    "eslint-config-prettier": "^4.0.0",
-    "eslint-plugin-prettier": "^3.0.1",
     "parcel-bundler": "^1.11.0",
+    "react": "^16.8.2",
     "react-bootstrap": "^1.0.0-beta.5"
   }
 }
