@@ -1,19 +1,16 @@
 import React from "react";
 import { render } from "react-dom";
+import Header from "./Header";
+import DogGuessr from "./DogGuessr";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      photos: []
-    };
-  }
-
   render() {
     return (
       <div>
-        <h2>Dog guessr</h2>
+        <Header />
+        <div id="title">Dog guessr</div>
+        <DogGuessr />
+        <div id="photo" />
       </div>
     );
   }
