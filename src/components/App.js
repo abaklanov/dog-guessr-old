@@ -8,9 +8,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <div id="title">Dog guessr</div>
         <DogGuessr />
-        <div id="photo" />
       </div>
     );
   }

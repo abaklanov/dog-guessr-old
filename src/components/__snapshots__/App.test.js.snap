@@ -3,14 +3,6 @@
 exports[`renders correctly 1`] = `
 <div>
   <Header />
-  <div
-    id="title"
-  >
-    Dog guessr
-  </div>
   <DogGuessr />
-  <div
-    id="photo"
-  />
 </div>
 `;

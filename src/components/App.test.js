@@ -17,9 +17,3 @@ it("renders the Header component", () => {
 it("renders the DogGuessr component", () => {
   expect(app.find(DogGuessr)).toHaveLength(1);
 });
-
-it("displays the app name `Dog guessr` in a div with id `title`", () => {
-  const div = app.find("div#title");
-  expect(div).toHaveLength(1);
-  expect(div.text()).toEqual("Dog guessr");
-});
