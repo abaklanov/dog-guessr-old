@@ -10,7 +10,7 @@ class DogGuessr extends React.Component {
   }
 
   render() {
-    return "";
+    return <div id="photo" />;
   }
 }
 
