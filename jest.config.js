@@ -183,5 +183,8 @@ module.exports = {
   // Whether to use watchman for file crawling
   // watchman: true,
 
-  setupFilesAfterEnv: ["./setupTests.js"]
+  // In order to connect Enzyme
+  setupFilesAfterEnv: ["./setupTests.js"],
+  // For proper snapshots of shallowed copy with Enzyme
+  snapshotSerializers: ["enzyme-to-json/serializer"]
 };
