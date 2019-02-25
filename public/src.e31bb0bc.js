@@ -49590,7 +49590,7 @@ function (_React$Component) {
         className: "row justify-content-center"
       }, _react.default.createElement("div", {
         className: "col-lg-4"
-      }, possibleGuesses, " "));
+      }, possibleGuesses));
     }
   }]);
 
