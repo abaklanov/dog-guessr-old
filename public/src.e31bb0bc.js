@@ -47770,7 +47770,7 @@ function (_React$Component) {
       }, _react.default.createElement(_reactBootstrap.Navbar.Brand, {
         href: "/"
       }, "DogGuessr"), _react.default.createElement("a", {
-        href: "https://github.com/abaklanov/dogguessr",
+        href: "https://github.com/abaklanov/dog-guessr",
         style: {
           color: "black"
         }
@@ -49564,7 +49564,7 @@ function (_React$Component) {
       });
       setTimeout(function () {
         window.location.replace("./");
-      }, 3000);
+      }, 1000);
     }
   }, {
     key: "render",

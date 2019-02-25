@@ -173,6 +173,6 @@ describe("when button clicked", () => {
 
     btn.simulate("click");
     expect(setTimeout).toHaveBeenCalledTimes(1);
-    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 1000);
   });
 });

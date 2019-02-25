@@ -85,7 +85,7 @@ class GuessButtons extends React.Component {
 
     setTimeout(() => {
       window.location.replace("./");
-    }, 3000);
+    }, 1000);
   }
 
   render() {
