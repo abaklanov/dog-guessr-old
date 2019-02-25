@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<ForwardRef(Bootstrap(undefined))
+  bg="light"
+>
+  <ForwardRef(Bootstrap(NavbarBrand))
+    href="/"
+  >
+    DogGuessr
+  </ForwardRef(Bootstrap(NavbarBrand))>
+</ForwardRef(Bootstrap(undefined))>
+`;
