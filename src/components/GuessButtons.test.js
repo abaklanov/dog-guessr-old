@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import GuessButtons from "./GuessButtons";
 import { Button } from "react-bootstrap";
 
@@ -114,8 +114,8 @@ it("gets a breed being guessed as a prop", () => {
   // TODO: implement
 });
 
-it("stores 4 possible answers", () => {
-  expect(wrapper.state().possibleGuesses).toHaveLength(4);
+it("stores schema of button properties with their variant, answer", () => {
+  expect(wrapper.state().schema).toHaveLength(4);
 });
 
 it("shows four buttons with breed names on it", () => {
@@ -123,4 +123,38 @@ it("shows four buttons with breed names on it", () => {
   expect(guessButtons).toHaveLength(4);
 
   // TODO: check texts
+});
+
+describe("changes the color of the clicked button to", () => {
+  beforeEach(() => {
+    wrapper.setState({
+      schema: [
+        { btnVariant: "light", isCorrect: false, answer: "akita" },
+        { btnVariant: "light", isCorrect: true, answer: "corgi" },
+        { btnVariant: "light", isCorrect: false, answer: "beagle" },
+        { btnVariant: "light", isCorrect: false, answer: "spaniel" }
+      ]
+    });
+  });
+
+  it("green in case of success and red otherwise", () => {
+    let btn = wrapper.find(Button).at(1);
+
+    btn.simulate("click");
+    expect(wrapper.state().schema[1].btnVariant).toBe("success");
+
+    wrapper.update();
+    btn = wrapper.find(Button).at(1);
+    expect(btn.prop("variant")).toBe("success");
+  });
+  it("red otherwise", () => {
+    let btn = wrapper.find(Button).at(2);
+
+    btn.simulate("click");
+    expect(wrapper.state().schema[2].btnVariant).toBe("danger");
+
+    wrapper.update();
+    btn = wrapper.find(Button).at(2);
+    expect(btn.prop("variant")).toBe("danger");
+  });
 });

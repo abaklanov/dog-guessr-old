@@ -7,7 +7,7 @@ class GuessButtons extends React.Component {
     super(props);
 
     this.state = {
-      possibleGuesses: []
+      schema: []
     };
   }
 
@@ -16,7 +16,7 @@ class GuessButtons extends React.Component {
       .then(
         (resp => {
           this.setState({
-            possibleGuesses: this.getArrayOfGuesses(resp.data.message)
+            schema: this.getSchema(resp.data.message)
           });
         }).bind(this)
       )
@@ -58,12 +58,37 @@ class GuessButtons extends React.Component {
     return shuffle(res);
   }
 
+  getSchema(breeds) {
+    const guesses = this.getArrayOfGuesses(breeds);
+    return guesses.map(guess => {
+      return {
+        btnVariant: "light",
+        isCorrect: guess === this.props.breedToGuess,
+        answer: guess
+      };
+    });
+  }
+
+  doGuess(index) {
+    const currentState = this.state.schema.slice(0);
+
+    currentState[index].btnVariant = currentState[index].isCorrect
+      ? "success"
+      : "danger";
+
+    this.setState(currentState);
+  }
+
   render() {
-    const possibleGuesses = this.state.possibleGuesses.map((guess, index) => (
+    const possibleGuesses = this.state.schema.map((element, index) => (
       <div className="row" key={index}>
         <div className="col-lg-4">
-          <Button variant="light" className="guessBtn">
-            {guess}
+          <Button
+            variant={element.btnVariant}
+            className="guessBtn"
+            onClick={e => this.doGuess(index, e)}
+          >
+            {element.answer}
           </Button>
         </div>
       </div>
