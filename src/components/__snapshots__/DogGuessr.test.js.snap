@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div
-  id="photo"
-/>
+<div>
+  <div
+    class="row justify-content-center"
+  >
+    <div
+      class="col-lg-4 text-center"
+    >
+      <div
+        id="photo"
+      >
+        <img
+          src="https://images.dog.ceo/breeds/samoyed/n02111889_6622.jpg"
+        />
+      </div>
+    </div>
+  </div>
+  <GuessButtons />
+</div>
 `;

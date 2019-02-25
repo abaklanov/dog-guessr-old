@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import GuessButtons from "./GuessButtons";
 
 class DogGuessr extends React.Component {
   constructor(props) {
@@ -16,7 +17,8 @@ class DogGuessr extends React.Component {
       .then(
         (resp => {
           this.setState({
-            photo: resp.data.message
+            photo: resp.data.message,
+            breedToGuess: this.determineBreedToGuess(resp.data.message)
           });
         }).bind(this)
       )
@@ -25,8 +27,24 @@ class DogGuessr extends React.Component {
       });
   }
 
+  determineBreedToGuess(url) {
+    const segments = url.substring(8).split("/");
+    return segments[2];
+  }
+
   render() {
-    return <div id="photo" />;
+    return (
+      <div>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 text-center">
+            <div id="photo">
+              <img src={this.state.photo} />
+            </div>
+          </div>
+        </div>
+        <GuessButtons />
+      </div>
+    );
   }
 }
 
