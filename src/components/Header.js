@@ -9,7 +9,7 @@ class Header extends React.Component {
       <Navbar bg="light" className="justify-content-between">
         <Navbar.Brand href="/">DogGuessr</Navbar.Brand>
         <a
-          href="https://github.com/abaklanov/dogguessr"
+          href="https://github.com/abaklanov/dog-guessr"
           style={{ color: "black" }}
         >
           <FontAwesomeIcon icon={faGithub} />

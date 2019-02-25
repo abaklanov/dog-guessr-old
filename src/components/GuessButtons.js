@@ -85,7 +85,7 @@ class GuessButtons extends React.Component {
 
     setTimeout(() => {
       window.location.replace("./");
-    }, 3000);
+    }, 1000);
   }
 
   render() {
@@ -105,7 +105,7 @@ class GuessButtons extends React.Component {
     ));
     return (
       <div className="row justify-content-center">
-        <div className="col-lg-4">{possibleGuesses} </div>
+        <div className="col-lg-4">{possibleGuesses}</div>
       </div>
     );
   }
