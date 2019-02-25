@@ -6,6 +6,7 @@ exports[`renders correctly 1`] = `
 >
   <ForwardRef(Bootstrap(Button))
     id="skip"
+    onClick={[Function]}
     variant="secondary"
   >
     Skip
