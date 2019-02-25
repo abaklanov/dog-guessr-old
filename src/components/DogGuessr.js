@@ -7,7 +7,8 @@ class DogGuessr extends React.Component {
     super(props);
 
     this.state = {
-      photo: ""
+      photo: "",
+      breedToGuess: ""
     };
   }
 
@@ -42,7 +43,12 @@ class DogGuessr extends React.Component {
             </div>
           </div>
         </div>
-        <GuessButtons breedToGuess={this.state.breedToGuess} />
+
+        {this.state.breedToGuess !== "" ? (
+          <GuessButtons breedToGuess={this.state.breedToGuess} />
+        ) : (
+          "Loading..."
+        )}
       </div>
     );
   }
