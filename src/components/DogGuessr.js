@@ -37,7 +37,7 @@ class DogGuessr extends React.Component {
     return (
       <div>
         <div className="row justify-content-center">
-          <div className="col-lg-4 text-center">
+          <div className="col-lg-6 text-center">
             <div id="photo" className=" m-1">
               <img
                 src={this.state.photo}
