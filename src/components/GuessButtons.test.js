@@ -125,7 +125,7 @@ it("shows four buttons with breed names on it", () => {
   // TODO: check texts
 });
 
-describe("changes the color of the clicked button to", () => {
+describe("when button clicked", () => {
   beforeEach(() => {
     wrapper.setState({
       schema: [
@@ -137,7 +137,7 @@ describe("changes the color of the clicked button to", () => {
     });
   });
 
-  it("green in case of success and red otherwise", () => {
+  it("it turns button color green in case of success", () => {
     let btn = wrapper.find(Button).at(1);
 
     btn.simulate("click");
@@ -156,5 +156,15 @@ describe("changes the color of the clicked button to", () => {
     wrapper.update();
     btn = wrapper.find(Button).at(2);
     expect(btn.prop("variant")).toBe("danger");
+  });
+  it("disables all buttons after the answer", () => {
+    let buttons = wrapper.find(Button);
+    let btn = buttons.at(2);
+
+    btn.simulate("click");
+    wrapper.update();
+    buttons = wrapper.find(Button).forEach(node => {
+      expect(node.prop("disabled")).toEqual("disabled");
+    });
   });
 });
