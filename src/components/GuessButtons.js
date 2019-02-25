@@ -7,7 +7,8 @@ class GuessButtons extends React.Component {
     super(props);
 
     this.state = {
-      schema: []
+      schema: [],
+      areButtonsDisabled: false
     };
   }
 
@@ -16,7 +17,8 @@ class GuessButtons extends React.Component {
       .then(
         (resp => {
           this.setState({
-            schema: this.getSchema(resp.data.message)
+            schema: this.getSchema(resp.data.message),
+            areButtonsDisabled: false
           });
         }).bind(this)
       )
@@ -70,13 +72,20 @@ class GuessButtons extends React.Component {
   }
 
   doGuess(index) {
-    const currentState = this.state.schema.slice(0);
+    const currentSchemaState = this.state.schema.slice(0);
 
-    currentState[index].btnVariant = currentState[index].isCorrect
+    currentSchemaState[index].btnVariant = currentSchemaState[index].isCorrect
       ? "success"
       : "danger";
 
-    this.setState(currentState);
+    this.setState({
+      schema: currentSchemaState,
+      areButtonsDisabled: true
+    });
+
+    setTimeout(() => {
+      window.location.replace("/");
+    }, 3000);
   }
 
   render() {
@@ -87,6 +96,7 @@ class GuessButtons extends React.Component {
             variant={element.btnVariant}
             className="guessBtn m-1"
             onClick={e => this.doGuess(index, e)}
+            disabled={this.state.areButtonsDisabled ? "disabled" : ""}
           >
             {element.answer}
           </Button>

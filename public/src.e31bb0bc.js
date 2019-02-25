@@ -49477,7 +49477,8 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(GuessButtons).call(this, props));
     _this.state = {
-      schema: []
+      schema: [],
+      areButtonsDisabled: false
     };
     return _this;
   }
@@ -49489,7 +49490,8 @@ function (_React$Component) {
 
       _axios.default.get("https://dog.ceo/api/breeds/list").then(function (resp) {
         _this2.setState({
-          schema: _this2.getSchema(resp.data.message)
+          schema: _this2.getSchema(resp.data.message),
+          areButtonsDisabled: false
         });
       }.bind(this)).catch(function (err) {});
     }
@@ -49554,9 +49556,15 @@ function (_React$Component) {
   }, {
     key: "doGuess",
     value: function doGuess(index) {
-      var currentState = this.state.schema.slice(0);
-      currentState[index].btnVariant = currentState[index].isCorrect ? "success" : "danger";
-      this.setState(currentState);
+      var currentSchemaState = this.state.schema.slice(0);
+      currentSchemaState[index].btnVariant = currentSchemaState[index].isCorrect ? "success" : "danger";
+      this.setState({
+        schema: currentSchemaState,
+        areButtonsDisabled: true
+      });
+      setTimeout(function () {
+        window.location.replace("/");
+      }, 3000);
     }
   }, {
     key: "render",
@@ -49574,7 +49582,8 @@ function (_React$Component) {
           className: "guessBtn m-1",
           onClick: function onClick(e) {
             return _this4.doGuess(index, e);
-          }
+          },
+          disabled: _this4.state.areButtonsDisabled ? "disabled" : ""
         }, element.answer)));
       });
       return _react.default.createElement("div", {
