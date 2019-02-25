@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    className="row justify-content-center"
+  >
+    <div
+      className="col-lg-4 text-center"
+    >
+      <div
+        className=" m-1"
+        id="photo"
+      >
+        <img
+          className="border p-2"
+          src="https://images.dog.ceo/breeds/samoyed/n02111889_6622.jpg"
+          style={
+            Object {
+              "height": "500px",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <GuessButtons
+    breedToGuess="samoyed"
+  />
+</div>
+`;
