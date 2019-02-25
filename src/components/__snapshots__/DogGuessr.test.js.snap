@@ -9,10 +9,17 @@ exports[`renders correctly 1`] = `
       className="col-lg-4 text-center"
     >
       <div
+        className=" m-1"
         id="photo"
       >
         <img
+          className="border p-2"
           src="https://images.dog.ceo/breeds/samoyed/n02111889_6622.jpg"
+          style={
+            Object {
+              "height": "500px",
+            }
+          }
         />
       </div>
     </div>

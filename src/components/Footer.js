@@ -9,14 +9,16 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <Button
-          variant="secondary"
-          id="skip"
-          onClick={this.handleSkipButtonClick}
-        >
-          Skip
-        </Button>
+      <div className="row justify-content-center m-3">
+        <div class="col-lg-4 text-center">
+          <Button
+            variant="secondary"
+            id="skip"
+            onClick={this.handleSkipButtonClick}
+          >
+            Skip
+          </Button>
+        </div>
       </div>
     );
   }

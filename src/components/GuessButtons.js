@@ -82,10 +82,10 @@ class GuessButtons extends React.Component {
   render() {
     const possibleGuesses = this.state.schema.map((element, index) => (
       <div className="row" key={index}>
-        <div className="col-lg-4">
+        <div className="col-lg-12 text-center">
           <Button
             variant={element.btnVariant}
-            className="guessBtn"
+            className="guessBtn m-1"
             onClick={e => this.doGuess(index, e)}
           >
             {element.answer}
@@ -93,7 +93,11 @@ class GuessButtons extends React.Component {
         </div>
       </div>
     ));
-    return <div>{possibleGuesses}</div>;
+    return (
+      <div className="row justify-content-center">
+        <div className="col-lg-4">{possibleGuesses} </div>
+      </div>
+    );
   }
 }
 

@@ -38,8 +38,12 @@ class DogGuessr extends React.Component {
       <div>
         <div className="row justify-content-center">
           <div className="col-lg-4 text-center">
-            <div id="photo">
-              <img src={this.state.photo} />
+            <div id="photo" className=" m-1">
+              <img
+                src={this.state.photo}
+                className="border p-2"
+                style={{ height: 500 + "px" }}
+              />
             </div>
           </div>
         </div>
