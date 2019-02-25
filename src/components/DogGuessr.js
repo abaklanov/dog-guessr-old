@@ -35,14 +35,14 @@ class DogGuessr extends React.Component {
   render() {
     return (
       <div>
-        <div class="row justify-content-center">
-          <div class="col-lg-4 text-center">
+        <div className="row justify-content-center">
+          <div className="col-lg-4 text-center">
             <div id="photo">
               <img src={this.state.photo} />
             </div>
           </div>
         </div>
-        <GuessButtons />
+        <GuessButtons breedToGuess={this.state.breedToGuess} />
       </div>
     );
   }

@@ -3,10 +3,10 @@
 exports[`renders correctly 1`] = `
 <div>
   <div
-    class="row justify-content-center"
+    className="row justify-content-center"
   >
     <div
-      class="col-lg-4 text-center"
+      className="col-lg-4 text-center"
     >
       <div
         id="photo"
@@ -17,6 +17,8 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <GuessButtons />
+  <GuessButtons
+    breedToGuess="samoyed"
+  />
 </div>
 `;
