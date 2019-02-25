@@ -6,7 +6,7 @@ import { faStepForward } from "@fortawesome/free-solid-svg-icons";
 class Footer extends React.Component {
   handleSkipButtonClick() {
     // Just reload the page
-    document.location.replace("/");
+    document.location.replace("./");
   }
 
   render() {
