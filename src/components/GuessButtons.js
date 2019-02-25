@@ -68,16 +68,7 @@ class GuessButtons extends React.Component {
         </div>
       </div>
     ));
-    return (
-      <div>
-        {possibleGuesses}
-        <div className="row">
-          <Button variant="secondary" id="skip">
-            Skip
-          </Button>
-        </div>
-      </div>
-    );
+    return <div>{possibleGuesses}</div>;
   }
 }
 

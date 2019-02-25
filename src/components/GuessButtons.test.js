@@ -124,8 +124,3 @@ it("shows four buttons with breed names on it", () => {
 
   // TODO: check texts
 });
-
-it("displays Skip button", () => {
-  const button = wrapper.find(Button).find("#skip");
-  expect(button).toHaveLength(1);
-});
