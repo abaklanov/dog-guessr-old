@@ -49563,7 +49563,7 @@ function (_React$Component) {
         areButtonsDisabled: true
       });
       setTimeout(function () {
-        window.location.replace("/");
+        window.location.replace("./");
       }, 3000);
     }
   }, {
@@ -56322,7 +56322,7 @@ function (_React$Component) {
     key: "handleSkipButtonClick",
     value: function handleSkipButtonClick() {
       // Just reload the page
-      document.location.replace("/");
+      document.location.replace("./");
     }
   }, {
     key: "render",
