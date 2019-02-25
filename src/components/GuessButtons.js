@@ -82,6 +82,10 @@ class GuessButtons extends React.Component {
       schema: currentSchemaState,
       areButtonsDisabled: true
     });
+
+    setTimeout(() => {
+      window.location.replace("/");
+    }, 3000);
   }
 
   render() {

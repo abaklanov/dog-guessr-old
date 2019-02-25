@@ -167,4 +167,12 @@ describe("when button clicked", () => {
       expect(node.prop("disabled")).toEqual("disabled");
     });
   });
+  it("redirects to the next round in 3 seconds", () => {
+    jest.useFakeTimers();
+    let btn = wrapper.find(Button).at(2);
+
+    btn.simulate("click");
+    expect(setTimeout).toHaveBeenCalledTimes(1);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
+  });
 });
