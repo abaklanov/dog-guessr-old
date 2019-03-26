@@ -36,7 +36,7 @@ class DogGuessr extends React.Component {
   render() {
     return (
       <div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-center no-gutters">
           <div className="col-lg-6 text-center">
             <div id="photo" className=" m-1">
               <img
