@@ -11,6 +11,7 @@ class Header extends React.Component {
         <a
           href="https://github.com/abaklanov/dog-guessr"
           style={{ color: "black" }}
+          target="_blank"
         >
           <FontAwesomeIcon icon={faGithub} />
         </a>
